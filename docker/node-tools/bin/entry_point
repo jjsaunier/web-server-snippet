@@ -1,0 +1,4 @@
+#!/bin/sh
+eval `ssh-agent -s` > /dev/null
+ssh-add > /dev/null
+exec $*

@@ -2,7 +2,11 @@ FROM php:5.6-cli
 
 MAINTAINER Johann Saunier <johann_27@hotmail.fr>
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y zlib1g-dev git mercurial subversion --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update
+RUN apt-get upgrade -y 
+RUN apt-get install -y zlib1g-dev git mercurial subversion --no-install-recommends && rm -r /var/lib/apt/lists/*
 RUN docker-php-ext-install zip
 RUN echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
