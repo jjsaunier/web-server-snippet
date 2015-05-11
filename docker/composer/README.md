@@ -14,5 +14,5 @@ docker build -t composer/composer .
 # Bash alias
 
 ```cmd
-alias composer="docker run --rm -it -v \$(pwd):/app -w /app composer/composer
+alias composer="docker run --rm -it -v \$(pwd):/app -w /app composer/composer"
 ```
